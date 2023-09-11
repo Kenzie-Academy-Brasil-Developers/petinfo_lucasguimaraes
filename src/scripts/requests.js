@@ -59,3 +59,27 @@ export const loginRequest = async (requestBody) => {
 
   return token;
 };
+
+
+export const registerRequest = async (requestBody) => {
+  const response = await fetch(`${baseUrl}/register`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(requestBody),
+  }).then(async (res) => {
+    const resConverted = await res.json();
+
+    if (res.ok) {
+      toast("Registro realizado com sucesso!", green);
+      // Você pode adicionar aqui qualquer lógica adicional após um registro bem-sucedido
+      return resConverted;
+    } else {
+      toast(resConverted.message, red);
+    }
+  });
+
+  return response;
+};
+
