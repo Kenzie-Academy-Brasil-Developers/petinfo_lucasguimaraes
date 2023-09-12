@@ -28,4 +28,13 @@ const handleRegister = () => {
   });
 };
 
+const handleButton = () => {    
+    const button = document.querySelector(".redirect__button")
+
+    button.addEventListener('click', () => {
+        location.replace("index.html")
+    })
+}
+
+handleButton()
 handleRegister()
