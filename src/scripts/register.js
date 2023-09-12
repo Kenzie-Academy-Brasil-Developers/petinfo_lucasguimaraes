@@ -1,3 +1,5 @@
+import { registerRequest } from './requests.js';
+
 const handleRegister = () => {
   const inputs = document.querySelectorAll(".register__input");
   const button = document.querySelector("#register__submit");
@@ -19,10 +21,11 @@ const handleRegister = () => {
 
     if (count === 0) {
       const response = await registerRequest(requestBody);
-      // Aqui você pode adicionar qualquer lógica adicional após um registro bem-sucedido
+      
     } else {
       toast("Por favor, preencha todos os campos!", red);
     }
   });
 };
 
+handleRegister()
