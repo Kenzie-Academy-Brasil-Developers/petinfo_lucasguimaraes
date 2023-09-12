@@ -73,7 +73,9 @@ export const registerRequest = async (requestBody) => {
 
     if (res.ok) {
       toast("Registro realizado com sucesso!", green);
-      // Você pode adicionar aqui qualquer lógica adicional após um registro bem-sucedido
+            setTimeout(() => {
+        location.replace("./index.html);
+      }, 1000);
       return resConverted;
     } else {
       toast(resConverted.message, red);
