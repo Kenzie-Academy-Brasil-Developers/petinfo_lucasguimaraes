@@ -44,8 +44,8 @@ export const loginRequest = async (requestBody) => {
 
     if (res.ok) {
       toast("Login realizado com sucesso!", green);
-      localStorage.setItem("petinfo:token", resConverted.token);
-      localStorage.setItem("petinfo:name", resConverted.name);
+      localStorage.setItem("@petinfo:token", resConverted.token);
+      localStorage.setItem("@petinfo:name", resConverted.name);
 
       setTimeout(() => {
         location.replace("./src/pages/feed.html");
